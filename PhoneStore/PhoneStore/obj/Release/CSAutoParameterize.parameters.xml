@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Studio-Web.config Connection String" description="Studio Connection String used in web.config by the application to access the database." defaultValue="Data Source=K-N-T\SQL_ADMIN_K;Initial Catalog=Phone_Shop;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\K\\source\\repos\\PhoneStore\\PhoneStore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Studio']/@connectionString" />
+  </parameter>
+  <parameter name="PhoneStore.Models.PhoneStoreContext-Web.config Connection String" description="PhoneStore.Models.PhoneStoreContext Connection String used in web.config by the application to access the database." defaultValue="PhoneStore.Models.PhoneStoreContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\K\\source\\repos\\PhoneStore\\PhoneStore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PhoneStore.Models.PhoneStoreContext']/@connectionString" />
+  </parameter>
+</parameters>

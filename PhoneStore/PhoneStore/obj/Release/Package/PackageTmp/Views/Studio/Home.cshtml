@@ -1,0 +1,218 @@
+﻿@model PhoneStore.Models.Order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render(@"~/Content/Studio/Home.css")
+    @Styles.Render(@"~/Content/Studio/Product.css")
+</head>
+<body>
+    @*Header*@
+    <div class="header" id="Header">
+
+    </div>
+    <script type="text/javascript">
+        // name of brand
+        var nameofbrand = ['APPLE', 'ASUS', 'COOLPAD', 'NOKIA'];
+        var logo = ['../asset/LOGO/open_graph_logo.png', '../asset/LOGO/ASUS.png', '../asset/LOGO/COOLPAD.jpg', '../asset/LOGO/NOKIA.jpg'];
+        var object_header = document.getElementById("Header")
+        for (var i = 0; i < 4; i++) {
+            var object_child = document.createElement("div");
+            object_child.id = "child-" + i.toString();
+            if (i === 0) {
+                object_child.className = "header_child_First";
+                //object_child.textContent = nameofbrand[i];
+                object_child.style.backgroundImage = "url(" + logo[i] + ")";
+                object_child.style.backgroundSize = "216px 75px";
+            } else {
+                object_child.className = "header_child_Remain";
+                //object_child.textContent = nameofbrand[i];
+                object_child.style.backgroundImage = "url(" + logo[i] + ")";
+                object_child.style.backgroundSize = "216px 75px";
+            }
+
+            object_header.appendChild(object_child);
+
+
+        }
+    </script>
+
+    @*Content*@
+
+    <div class="content" id="Content"></div>
+
+    <script>
+        var object_content = document.getElementById("Content");
+        var object_header_First = document.getElementById("child-0");
+        var len_header_child_Frist = 4;
+
+        object_header_First.addEventListener("click", function () {
+            var apple = ["../asset/APPLE/iphone-7-plus-256gb.jpg", "../asset/APPLE/iphone-7.jpg", "../asset/APPLE/iphone-8-plus-256gb-red.jpg", "../asset/APPLE/iphone-8-plus-hh.jpg"];
+            var apple_name = ["Iphone_7_Plus_256GB", "Iphone_7", "Iphone_8_Plus_256GB_Red", "Iphone_8_Plus_hh"];
+            //if (len_header_child_Frist == 0) {
+
+            //} else {
+            //    for (var i = 0; i < len_header_child_Frist; i++) {
+            //        var content_child = document.getElementById("content-child-" + i.toString());
+            //        object_content.removeChild(content_child);
+            //    }
+
+
+            //}
+            if (len_header_child_Frist == apple.length) {
+                for (var i = 0; i < apple.length; i++) {
+                    var object_content_child = document.createElement("div");
+                    object_content_child.id = "content-child-" + i.toString();
+                    object_content_child.className = "content_apple_child";
+                    object_content_child.style.backgroundImage = "url(" + apple[i] + ")"; ///******
+                    object_content.appendChild(object_content_child);
+                }
+            } else {
+                for (var i = 0; i < len_header_child_Frist; i++) {
+                    var content_child = document.getElementById("content-child-" + i.toString());
+                    object_content.removeChild(content_child);
+                }
+
+                for (var i = 0; i < apple.length; i++) {
+                    var object_content_child = document.createElement("div");
+                    object_content_child.id = "content-child-" + i.toString();
+                    object_content_child.className = "content_apple_child";
+                    object_content_child.style.backgroundImage = "url(" + apple[i] + ")";
+                    object_content.appendChild(object_content_child);
+                }
+           }
+           len_header_child_Frist = apple.length;
+           console.log(len_header_child_Frist);
+
+            var apple_obj = document.getElementsByClassName("content_apple_child");
+            apple_obj[0].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + apple[0] + "&name=" + apple_name[0]);
+            });
+            apple_obj[1].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + apple[1]+"&name=" + apple_name[1]);
+            });
+            apple_obj[2].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + apple[2] + "&name=" + apple_name[2]);
+            });
+            apple_obj[3].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + apple[3] + "&name=" + apple_name[3]);
+            });
+
+
+        });
+
+
+
+
+        var object_header_Second = document.getElementById("child-1");
+
+        object_header_Second.addEventListener("click", function () {
+            var asus = ["../asset/ASUS/asus-m2-pro.jpg"];
+            var asus_name = ["ASUS M2 PRO"];
+            for (var i = 0; i < len_header_child_Frist; i++) {
+                var content_child = document.getElementById("content-child-" + i.toString());
+                object_content.removeChild(content_child);
+            }
+
+
+            for (var i = 0; i < asus.length; i++) {
+                var object_content_child = document.createElement("div");
+                object_content_child.id = "content-child-" + i.toString();
+                object_content_child.className = "content_asus_child";
+                object_content_child.style.backgroundImage = "url(" + asus[i] + ")";
+                object_content.appendChild(object_content_child);
+            }
+            len_header_child_Frist = asus.length;
+            console.log(len_header_child_Frist);
+
+            var asus_obj = document.getElementsByClassName("content_asus_child");
+            asus_obj[0].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + asus[0] + "&name=" + asus_name[0]);
+            });
+
+        });
+
+        var object_header_Third = document.getElementById("child-2");
+        object_header_Third.addEventListener("click", function () {
+            var coolpad = ["../asset/COOLPAD/coolpad-mega-5-blue.jpg", "../asset/COOLPAD/coolpad-n3-gray-1.jpg", "../asset/COOLPAD/coolpad-n3c-gray.jpg", "../asset/COOLPAD/coolpad-n3d-blue.jpg"];
+            var coolpad_name = ["Coopad_Mega_5_Blue", "Coolpad_N3_Gray", "Coolpad_N3C_Gray", "Coolpad_N3D_Blue"];
+            for (var i = 0; i < len_header_child_Frist; i++) {
+                var content_child = document.getElementById("content-child-" + i.toString());
+                object_content.removeChild(content_child);
+            }
+
+
+            for (var i = 0; i < coolpad.length; i++) {
+                var object_content_child = document.createElement("div");
+                object_content_child.id = "content-child-" + i.toString();
+                object_content_child.className = "content_coolpad_child";
+                object_content_child.style.backgroundImage = "url(" + coolpad[i] + ")";
+                object_content.appendChild(object_content_child);
+            }
+            len_header_child_Frist = coolpad.length;
+            console.log(len_header_child_Frist);
+            var coolpad_obj = document.getElementsByClassName("content_coolpad_child");
+            coolpad_obj[0].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + coolpad[0] + "&name=" + coolpad_name[0]);
+            });
+            coolpad_obj[1].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + coolpad[1] + "&name=" + coolpad_name[1]);
+            });
+            coolpad_obj[2].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + coolpad[2] + "&name=" + coolpad_name[2]);
+            });
+            coolpad_obj[3].addEventListener("click", function () {
+                window.open("http://localhost:10805/Studio/Detail?path=" + coolpad[3] + "&name=" + coolpad_name[3]);
+            });
+
+
+        });
+
+        var object_header_Last = document.getElementById("child-3");
+        object_header_Last.addEventListener("click", function () {
+            var nokia = ["../asset/NOKIA/nokia-61-plus-2.jpg", "../asset/NOKIA/nokia-81.jpg"];
+            var nokia_name = ["Nokia_6.1_Plus", "Nokia_8.1"];
+            for (var i = 0; i < len_header_child_Frist; i++) {
+                var content_child = document.getElementById("content-child-" + i.toString());
+                object_content.removeChild(content_child);
+            }
+
+            for (var i = 0; i < nokia.length; i++) {
+                var object_content_child = document.createElement("div");
+                object_content_child.id = "content-child-" + i.toString();
+                object_content_child.className = "content_nokia_child";
+                object_content_child.style.backgroundImage = "url(" + nokia[i] + ")";
+                object_content.appendChild(object_content_child);
+            }
+            len_header_child_Frist = nokia.length;
+            console.log(len_header_child_Frist);
+
+            var nokia_obj = document.getElementsByClassName("content_nokia_child");
+            // nokia 1
+            nokia_obj[0].addEventListener("click", function () {
+
+                window.open("http://localhost:10805/Studio/Detail?path=" + nokia[0] + "&name=" + nokia_name[0]);
+            });
+
+            // nokia 2
+            nokia_obj[1].addEventListener("click", function () {
+
+                window.open("http://localhost:10805/Studio/Detail?path=" + nokia[1] + "&name=" + nokia_name[1]);
+            });
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

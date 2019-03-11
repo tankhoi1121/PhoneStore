@@ -1,0 +1,23 @@
+﻿@model PhoneStore.Models.Order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    @using (Html.BeginForm("Order", "Studio", FormMethod.Post))
+    {
+        <table>
+            <tr style="margin-right: 3px">Name</tr>
+            <tr>@Html.TextBox("Name")</tr>
+        </table>
+    }
+</body>
+</html>

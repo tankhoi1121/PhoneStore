@@ -1,0 +1,47 @@
+﻿.content_apple_child {
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-color: black;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.content_asus_child {
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-color: black;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.content_coolpad_child {
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-color: black;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.content_nokia_child {
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-color: black;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    margin-right: 3px;
+    display: inline-block;
+}
